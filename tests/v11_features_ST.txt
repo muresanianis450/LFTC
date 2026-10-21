@@ -1,0 +1,15 @@
+SYMBOL TABLE (hash table, 101 buckets, separate chaining)
+entries: 11 | buckets used: 11 | longest chain: 1 | load factor: 0.109
+
+ST_POS    BUCKET   KIND             LEXEME
+0         36       identifier       LIMIT_TAG
+1         32       string constant  "strong"
+2         24       identifier       squad
+3         8        identifier       name
+4         59       string constant  "Gojo"
+5         55       identifier       power
+6         77       int constant     100
+7         98       identifier       limit
+8         21       string constant  "Strong fighters"
+9         91       identifier       s
+10        66       string constant  "Strong"

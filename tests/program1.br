@@ -1,0 +1,16 @@
+Chimpanzini_Bananini MIN_POWER = 30
+Chimpanzini_Bananini LEGEND = SIXSEVEN
+squad = Peigengoo([{name: "Gojo", power: 100},
+                   {name: "Sahur", power: SIXSEVEN},
+                   {name: "Trippi", power: 20}])
+Tung_Tung_Tung_Sahur limit
+strong = squad Gojo_Satoru power >= limit Cheese_Rattatino power >= MIN_POWER
+names = strong -> (name)
+Bombardiro_Crocodilo names
+Bombombini_Gusini s Trippi_Troppi squad
+    Tralalero_Tralala power == LEGEND
+        Bombardiro_Crocodilo squad
+    Cappuccino_Assassino
+        Bombardiro_Crocodilo strong
+    Hipocactus
+Hipocactus

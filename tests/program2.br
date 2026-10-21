@@ -1,0 +1,45 @@
+Chimpanzini_Bananini START_RANK = "rookie"
+Chimpanzini_Bananini PENALTY = -5
+Chimpanzini_Bananini LEGEND = SIXSEVEN
+Chimpanzini_Bananini STAR_POWER = 90
+Chimpanzini_Bananini ELITE_POWER = STAR_POWER
+Chimpanzini_Bananini WILDCARD_FLOOR = 50
+roster = Peigengoo([{name: "Gojo", power: 100, team: "Jujutsu"},
+                    {name: "Sahur", power: LEGEND, team: "Brainrot"},
+                    {name: "Trippi", power: 20, team: "Brainrot"},
+                    {name: "Bombardiro", power: 85, team: "Air"},
+                    {name: "Cappuccino", power: 55, team: "Cafe"}])
+bench = Peigengoo([])
+Tung_Tung_Tung_Sahur minpower
+Tung_Tung_Tung_Sahur maxpower
+roster = roster + rank = START_RANK
+roster = roster + bonus = 0
+roster = roster + penalty = PENALTY
+eligible = roster Gojo_Satoru power >= minpower Cheese_Rattatino power <= maxpower
+Bombardiro_Crocodilo eligible
+wildcards = roster Gojo_Satoru
+    (team == "Brainrot" Shpioniro_Golubiro team == "Air")
+    Cheese_Rattatino power > WILDCARD_FLOOR
+cards = eligible Gojo_Satoru power > 60 -> (name, power)
+Bombardiro_Crocodilo cards
+Tung_Tung_Tung_Sahur threshold
+champions = roster Gojo_Satoru power > threshold
+champions = champions - bonus
+champions = champions - penalty
+Bombardiro_Crocodilo champions
+bench = roster Gojo_Satoru power < minpower
+Bombardiro_Crocodilo bench
+Bombombini_Gusini f Trippi_Troppi roster
+    Tralalero_Tralala power == LEGEND
+        Bombardiro_Crocodilo cards
+    Hipocactus
+    Tralalero_Tralala power >= ELITE_POWER Shpioniro_Golubiro team == "Cafe"
+        Bombardiro_Crocodilo champions
+    Cappuccino_Assassino
+        Tralalero_Tralala (power < 30 Cheese_Rattatino team != "Air")
+            Shpioniro_Golubiro name == "Trippi"
+            Bombardiro_Crocodilo bench
+        Hipocactus
+    Hipocactus
+Hipocactus
+Bombardiro_Crocodilo wildcards
