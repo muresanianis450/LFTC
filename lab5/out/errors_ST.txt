@@ -1,0 +1,21 @@
+SYMBOL TABLE (hash table, 101 buckets, separate chaining)
+ST_POS  BUCKET  KIND             LEXEME
+0       27      identifier       LEGEND
+1       19      identifier       x
+2       13      identifier       name
+3       20      identifier       y
+4       97      identifier       a
+5       21      identifier       z
+6       18      identifier       w
+7       16      identifier       ok
+8       67      int constant     -2147483648
+9       24      identifier       msg
+10      98      identifier       b
+11      99      identifier       c
+12      100     identifier       d
+13      0       identifier       e
+14      1       identifier       f
+15      77      identifier       sixseven
+16      71      identifier       Gojo_Satoru2
+17      14      identifier       s
+18      98      int constant     -5

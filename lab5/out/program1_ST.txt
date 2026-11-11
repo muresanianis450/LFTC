@@ -1,0 +1,17 @@
+SYMBOL TABLE (hash table, 101 buckets, separate chaining)
+ST_POS  BUCKET  KIND             LEXEME
+0       13      identifier       MIN_POWER
+1       99      int constant     30
+2       27      identifier       LEGEND
+3       37      identifier       squad
+4       13      identifier       name
+5       63      string constant  "Gojo"
+6       52      identifier       power
+7       44      int constant     100
+8       78      string constant  "Sahur"
+9       94      string constant  "Trippi"
+10      98      int constant     20
+11      38      identifier       limit
+12      63      identifier       strong
+13      27      identifier       names
+14      14      identifier       s
