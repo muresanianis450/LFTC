@@ -1,0 +1,9 @@
+# string constant: " (letter|digit|space)* "
+name: string_constant
+states: q0 q1 q2
+start: q0
+final: q2
+q0 '"' q1
+q1 [A-Za-z0-9] q1
+q1 ' ' q1
+q1 '"' q2

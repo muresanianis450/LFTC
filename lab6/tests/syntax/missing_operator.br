@@ -1,0 +1,3 @@
+// a condition is: field, comparison operator, value (the operator is missing)
+squad = Peigengoo([{name: "Gojo", power: 100}])
+strong = squad Gojo_Satoru power 50

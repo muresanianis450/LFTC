@@ -1,0 +1,5 @@
+SYMBOL TABLE (hash table, 101 buckets, separate chaining)
+entries: 1 | buckets used: 1 | longest chain: 1 | load factor: 0.010
+
+ST_POS    BUCKET   KIND             LEXEME
+0         44       identifier       x

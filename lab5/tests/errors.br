@@ -1,0 +1,16 @@
+// every line below contains a lexical error
+Chimpanzini_Bananini LEGEND = SIXSEVEN
+x = Peigengoo([{name: "a_b"}])
+y = Peigengoo([{a: 007}])
+y = Peigengoo([{a: -0}])
+y = Peigengoo([{a: 5b}])
+z = 2147483648
+w = -2147483649
+ok = -2147483648
+msg = "unterminated
+name = "hi!"
+a @ b
+c / d
+e ! f
+sixseven = Gojo_Satoru2
+s = x - y -> (a) -5

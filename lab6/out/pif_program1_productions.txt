@@ -1,0 +1,142 @@
+STRING OF PRODUCTIONS (128 productions)
+rightmost derivation of <program>, first production applied first:
+
+1 2 2 2 2 2 3 7
+71 72 3 6 68 69 72 3 8 18 19 21 25 23 72 3 8 18 19 21
+25 23 47 49 50 52 53 67 55 57 58 55 57 21 25 23 8 18 19 21
+25 23 4 16 21 24 25 29 43 44 46 23 4 16 21 24 25 26 40 47
+49 50 51 52 53 67 55 57 62 55 57 53 67 55 57 62 55 57 23 5
+17 4 16 21 25 22 30 31 32 34 34 35 36 37 38 39 65 39 64 36
+37 38 39 66 39 64 36 37 38 39 65 39 64 9 9 10 11 14 11 13
+
+
+REDUCTIONS made by the parser, in order:
+STEP   PROD   PRODUCTION
+1      13     <const_value> ::= <number>
+2      11     <const_decl> ::= "Chimpanzini_Bananini" <identifier> "=" <const_value>
+3      14     <const_value> ::= "SIXSEVEN"
+4      11     <const_decl> ::= "Chimpanzini_Bananini" <identifier> "=" <const_value>
+5      10     <const_decls> ::= epsilon
+6      9      <const_decls> ::= <const_decl> <const_decls>
+7      9      <const_decls> ::= <const_decl> <const_decls>
+8      64     <value> ::= <string>
+9      39     <pair> ::= <identifier> ":" <value>
+10     65     <value> ::= <number>
+11     39     <pair> ::= <identifier> ":" <value>
+12     38     <more_pairs> ::= epsilon
+13     37     <more_pairs> ::= "," <pair> <more_pairs>
+14     36     <record> ::= "{" <pair> <more_pairs> "}"
+15     64     <value> ::= <string>
+16     39     <pair> ::= <identifier> ":" <value>
+17     66     <value> ::= "SIXSEVEN"
+18     39     <pair> ::= <identifier> ":" <value>
+19     38     <more_pairs> ::= epsilon
+20     37     <more_pairs> ::= "," <pair> <more_pairs>
+21     36     <record> ::= "{" <pair> <more_pairs> "}"
+22     64     <value> ::= <string>
+23     39     <pair> ::= <identifier> ":" <value>
+24     65     <value> ::= <number>
+25     39     <pair> ::= <identifier> ":" <value>
+26     38     <more_pairs> ::= epsilon
+27     37     <more_pairs> ::= "," <pair> <more_pairs>
+28     36     <record> ::= "{" <pair> <more_pairs> "}"
+29     35     <more_records> ::= epsilon
+30     34     <more_records> ::= "," <record> <more_records>
+31     34     <more_records> ::= "," <record> <more_records>
+32     32     <record_list_content> ::= <record> <more_records>
+33     31     <record_list> ::= "[" <record_list_content> "]"
+34     30     <list_creation> ::= "Peigengoo" "(" <record_list> ")"
+35     22     <list_base> ::= <list_creation>
+36     25     <list_ops> ::= epsilon
+37     21     <list_expression> ::= <list_base> <list_ops>
+38     16     <assignment> ::= <identifier> "=" <list_expression>
+39     4      <statement> ::= <assignment>
+40     17     <input_statement> ::= "Tung_Tung_Tung_Sahur" <identifier>
+41     5      <statement> ::= <input_statement>
+42     23     <list_base> ::= <identifier>
+43     57     <field_suffix> ::= epsilon
+44     55     <field_ref> ::= <identifier> <field_suffix>
+45     62     <operator> ::= ">="
+46     57     <field_suffix> ::= epsilon
+47     55     <field_ref> ::= <identifier> <field_suffix>
+48     67     <value> ::= <field_ref>
+49     53     <simple_cond> ::= <field_ref> <operator> <value>
+50     57     <field_suffix> ::= epsilon
+51     55     <field_ref> ::= <identifier> <field_suffix>
+52     62     <operator> ::= ">="
+53     57     <field_suffix> ::= epsilon
+54     55     <field_ref> ::= <identifier> <field_suffix>
+55     67     <value> ::= <field_ref>
+56     53     <simple_cond> ::= <field_ref> <operator> <value>
+57     52     <and_rest> ::= epsilon
+58     51     <and_rest> ::= "Cheese_Rattatino" <simple_cond> <and_rest>
+59     50     <and_cond> ::= <simple_cond> <and_rest>
+60     49     <or_rest> ::= epsilon
+61     47     <condition> ::= <and_cond> <or_rest>
+62     40     <filter_op> ::= "Gojo_Satoru" <condition>
+63     26     <list_op> ::= <filter_op>
+64     25     <list_ops> ::= epsilon
+65     24     <list_ops> ::= <list_op> <list_ops>
+66     21     <list_expression> ::= <list_base> <list_ops>
+67     16     <assignment> ::= <identifier> "=" <list_expression>
+68     4      <statement> ::= <assignment>
+69     23     <list_base> ::= <identifier>
+70     46     <more_identifiers> ::= epsilon
+71     44     <identifier_list> ::= <identifier> <more_identifiers>
+72     43     <select_op> ::= "->" "(" <identifier_list> ")"
+73     29     <list_op> ::= <select_op>
+74     25     <list_ops> ::= epsilon
+75     24     <list_ops> ::= <list_op> <list_ops>
+76     21     <list_expression> ::= <list_base> <list_ops>
+77     16     <assignment> ::= <identifier> "=" <list_expression>
+78     4      <statement> ::= <assignment>
+79     23     <list_base> ::= <identifier>
+80     25     <list_ops> ::= epsilon
+81     21     <list_expression> ::= <list_base> <list_ops>
+82     19     <print_arg> ::= <list_expression>
+83     18     <print_statement> ::= "Bombardiro_Crocodilo" <print_arg>
+84     8      <statement> ::= <print_statement>
+85     23     <list_base> ::= <identifier>
+86     25     <list_ops> ::= epsilon
+87     21     <list_expression> ::= <list_base> <list_ops>
+88     57     <field_suffix> ::= epsilon
+89     55     <field_ref> ::= <identifier> <field_suffix>
+90     58     <operator> ::= "=="
+91     57     <field_suffix> ::= epsilon
+92     55     <field_ref> ::= <identifier> <field_suffix>
+93     67     <value> ::= <field_ref>
+94     53     <simple_cond> ::= <field_ref> <operator> <value>
+95     52     <and_rest> ::= epsilon
+96     50     <and_cond> ::= <simple_cond> <and_rest>
+97     49     <or_rest> ::= epsilon
+98     47     <condition> ::= <and_cond> <or_rest>
+99     23     <list_base> ::= <identifier>
+100    25     <list_ops> ::= epsilon
+101    21     <list_expression> ::= <list_base> <list_ops>
+102    19     <print_arg> ::= <list_expression>
+103    18     <print_statement> ::= "Bombardiro_Crocodilo" <print_arg>
+104    8      <statement> ::= <print_statement>
+105    3      <statements> ::= epsilon
+106    72     <statement_block> ::= <statement> <statements>
+107    23     <list_base> ::= <identifier>
+108    25     <list_ops> ::= epsilon
+109    21     <list_expression> ::= <list_base> <list_ops>
+110    19     <print_arg> ::= <list_expression>
+111    18     <print_statement> ::= "Bombardiro_Crocodilo" <print_arg>
+112    8      <statement> ::= <print_statement>
+113    3      <statements> ::= epsilon
+114    72     <statement_block> ::= <statement> <statements>
+115    69     <optional_else> ::= "Cappuccino_Assassino" <statement_block>
+116    68     <if_statement> ::= "Tralalero_Tralala" <condition> <statement_block> <optional_else> "Hipocactus"
+117    6      <statement> ::= <if_statement>
+118    3      <statements> ::= epsilon
+119    72     <statement_block> ::= <statement> <statements>
+120    71     <for_loop> ::= "Bombombini_Gusini" <identifier> "Trippi_Troppi" <list_expression> <statement_block> "Hipocactus"
+121    7      <statement> ::= <for_loop>
+122    3      <statements> ::= epsilon
+123    2      <statements> ::= <statement> <statements>
+124    2      <statements> ::= <statement> <statements>
+125    2      <statements> ::= <statement> <statements>
+126    2      <statements> ::= <statement> <statements>
+127    2      <statements> ::= <statement> <statements>
+128    1      <program> ::= <const_decls> <statement> <statements>

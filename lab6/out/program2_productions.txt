@@ -1,0 +1,453 @@
+STRING OF PRODUCTIONS (424 productions)
+rightmost derivation of <program>, first production applied first:
+
+1 2 2 2
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 3 8 18
+19 21 25 23 7 71 72 2 3 6 68 69 72 3 6 68 70 72 3 8
+18 19 21 25 23 47 48 49 50 52 53 64 58 55 57 50 52 54 47 49
+50 51 52 53 64 59 55 57 53 65 61 55 57 72 3 8 18 19 21 25
+23 47 48 49 50 52 53 64 58 55 57 50 52 53 67 55 57 62 55 57
+6 68 70 72 3 8 18 19 21 25 23 47 49 50 52 53 67 55 57 58
+55 57 21 25 23 8 18 19 21 25 23 4 16 21 24 25 26 40 47 49
+50 52 53 67 55 57 61 55 57 23 8 18 19 21 25 23 4 16 21 24
+25 28 42 23 4 16 21 24 25 28 42 23 4 16 21 24 25 26 40 47
+49 50 52 53 67 55 57 60 55 57 23 5 17 8 18 19 21 25 23 4
+16 21 24 24 25 29 43 44 45 46 26 40 47 49 50 52 53 65 60 55
+57 23 4 16 21 24 25 26 40 47 49 50 51 52 53 67 55 57 60 55
+57 54 47 48 49 50 52 53 64 58 55 57 50 52 53 64 58 55 57 23
+8 18 19 21 25 23 4 16 21 24 25 26 40 47 49 50 51 52 53 67
+55 57 63 55 57 53 67 55 57 62 55 57 23 4 16 21 24 25 27 41
+67 55 57 23 4 16 21 24 25 27 41 65 23 4 16 21 24 25 27 41
+67 55 57 23 5 17 5 17 4 16 21 25 22 30 31 33 4 16 21 25
+22 30 31 32 34 34 34 34 35 36 37 37 38 39 64 39 65 39 64 36
+37 37 38 39 64 39 65 39 64 36 37 37 38 39 64 39 65 39 64 36
+37 37 38 39 64 39 67 55 57 39 64 36 37 37 38 39 64 39 65 39
+64 9 9 9 9 9 9 10 11 13 11 15 11 13 11 14 11 13 11 12
+
+
+REDUCTIONS made by the parser, in order:
+STEP   PROD   PRODUCTION
+1      12     <const_value> ::= <string>
+2      11     <const_decl> ::= "Chimpanzini_Bananini" <identifier> "=" <const_value>
+3      13     <const_value> ::= <number>
+4      11     <const_decl> ::= "Chimpanzini_Bananini" <identifier> "=" <const_value>
+5      14     <const_value> ::= "SIXSEVEN"
+6      11     <const_decl> ::= "Chimpanzini_Bananini" <identifier> "=" <const_value>
+7      13     <const_value> ::= <number>
+8      11     <const_decl> ::= "Chimpanzini_Bananini" <identifier> "=" <const_value>
+9      15     <const_value> ::= <identifier>
+10     11     <const_decl> ::= "Chimpanzini_Bananini" <identifier> "=" <const_value>
+11     13     <const_value> ::= <number>
+12     11     <const_decl> ::= "Chimpanzini_Bananini" <identifier> "=" <const_value>
+13     10     <const_decls> ::= epsilon
+14     9      <const_decls> ::= <const_decl> <const_decls>
+15     9      <const_decls> ::= <const_decl> <const_decls>
+16     9      <const_decls> ::= <const_decl> <const_decls>
+17     9      <const_decls> ::= <const_decl> <const_decls>
+18     9      <const_decls> ::= <const_decl> <const_decls>
+19     9      <const_decls> ::= <const_decl> <const_decls>
+20     64     <value> ::= <string>
+21     39     <pair> ::= <identifier> ":" <value>
+22     65     <value> ::= <number>
+23     39     <pair> ::= <identifier> ":" <value>
+24     64     <value> ::= <string>
+25     39     <pair> ::= <identifier> ":" <value>
+26     38     <more_pairs> ::= epsilon
+27     37     <more_pairs> ::= "," <pair> <more_pairs>
+28     37     <more_pairs> ::= "," <pair> <more_pairs>
+29     36     <record> ::= "{" <pair> <more_pairs> "}"
+30     64     <value> ::= <string>
+31     39     <pair> ::= <identifier> ":" <value>
+32     57     <field_suffix> ::= epsilon
+33     55     <field_ref> ::= <identifier> <field_suffix>
+34     67     <value> ::= <field_ref>
+35     39     <pair> ::= <identifier> ":" <value>
+36     64     <value> ::= <string>
+37     39     <pair> ::= <identifier> ":" <value>
+38     38     <more_pairs> ::= epsilon
+39     37     <more_pairs> ::= "," <pair> <more_pairs>
+40     37     <more_pairs> ::= "," <pair> <more_pairs>
+41     36     <record> ::= "{" <pair> <more_pairs> "}"
+42     64     <value> ::= <string>
+43     39     <pair> ::= <identifier> ":" <value>
+44     65     <value> ::= <number>
+45     39     <pair> ::= <identifier> ":" <value>
+46     64     <value> ::= <string>
+47     39     <pair> ::= <identifier> ":" <value>
+48     38     <more_pairs> ::= epsilon
+49     37     <more_pairs> ::= "," <pair> <more_pairs>
+50     37     <more_pairs> ::= "," <pair> <more_pairs>
+51     36     <record> ::= "{" <pair> <more_pairs> "}"
+52     64     <value> ::= <string>
+53     39     <pair> ::= <identifier> ":" <value>
+54     65     <value> ::= <number>
+55     39     <pair> ::= <identifier> ":" <value>
+56     64     <value> ::= <string>
+57     39     <pair> ::= <identifier> ":" <value>
+58     38     <more_pairs> ::= epsilon
+59     37     <more_pairs> ::= "," <pair> <more_pairs>
+60     37     <more_pairs> ::= "," <pair> <more_pairs>
+61     36     <record> ::= "{" <pair> <more_pairs> "}"
+62     64     <value> ::= <string>
+63     39     <pair> ::= <identifier> ":" <value>
+64     65     <value> ::= <number>
+65     39     <pair> ::= <identifier> ":" <value>
+66     64     <value> ::= <string>
+67     39     <pair> ::= <identifier> ":" <value>
+68     38     <more_pairs> ::= epsilon
+69     37     <more_pairs> ::= "," <pair> <more_pairs>
+70     37     <more_pairs> ::= "," <pair> <more_pairs>
+71     36     <record> ::= "{" <pair> <more_pairs> "}"
+72     35     <more_records> ::= epsilon
+73     34     <more_records> ::= "," <record> <more_records>
+74     34     <more_records> ::= "," <record> <more_records>
+75     34     <more_records> ::= "," <record> <more_records>
+76     34     <more_records> ::= "," <record> <more_records>
+77     32     <record_list_content> ::= <record> <more_records>
+78     31     <record_list> ::= "[" <record_list_content> "]"
+79     30     <list_creation> ::= "Peigengoo" "(" <record_list> ")"
+80     22     <list_base> ::= <list_creation>
+81     25     <list_ops> ::= epsilon
+82     21     <list_expression> ::= <list_base> <list_ops>
+83     16     <assignment> ::= <identifier> "=" <list_expression>
+84     4      <statement> ::= <assignment>
+85     33     <record_list_content> ::= epsilon
+86     31     <record_list> ::= "[" <record_list_content> "]"
+87     30     <list_creation> ::= "Peigengoo" "(" <record_list> ")"
+88     22     <list_base> ::= <list_creation>
+89     25     <list_ops> ::= epsilon
+90     21     <list_expression> ::= <list_base> <list_ops>
+91     16     <assignment> ::= <identifier> "=" <list_expression>
+92     4      <statement> ::= <assignment>
+93     17     <input_statement> ::= "Tung_Tung_Tung_Sahur" <identifier>
+94     5      <statement> ::= <input_statement>
+95     17     <input_statement> ::= "Tung_Tung_Tung_Sahur" <identifier>
+96     5      <statement> ::= <input_statement>
+97     23     <list_base> ::= <identifier>
+98     57     <field_suffix> ::= epsilon
+99     55     <field_ref> ::= <identifier> <field_suffix>
+100    67     <value> ::= <field_ref>
+101    41     <add_op> ::= "+" <identifier> "=" <value>
+102    27     <list_op> ::= <add_op>
+103    25     <list_ops> ::= epsilon
+104    24     <list_ops> ::= <list_op> <list_ops>
+105    21     <list_expression> ::= <list_base> <list_ops>
+106    16     <assignment> ::= <identifier> "=" <list_expression>
+107    4      <statement> ::= <assignment>
+108    23     <list_base> ::= <identifier>
+109    65     <value> ::= <number>
+110    41     <add_op> ::= "+" <identifier> "=" <value>
+111    27     <list_op> ::= <add_op>
+112    25     <list_ops> ::= epsilon
+113    24     <list_ops> ::= <list_op> <list_ops>
+114    21     <list_expression> ::= <list_base> <list_ops>
+115    16     <assignment> ::= <identifier> "=" <list_expression>
+116    4      <statement> ::= <assignment>
+117    23     <list_base> ::= <identifier>
+118    57     <field_suffix> ::= epsilon
+119    55     <field_ref> ::= <identifier> <field_suffix>
+120    67     <value> ::= <field_ref>
+121    41     <add_op> ::= "+" <identifier> "=" <value>
+122    27     <list_op> ::= <add_op>
+123    25     <list_ops> ::= epsilon
+124    24     <list_ops> ::= <list_op> <list_ops>
+125    21     <list_expression> ::= <list_base> <list_ops>
+126    16     <assignment> ::= <identifier> "=" <list_expression>
+127    4      <statement> ::= <assignment>
+128    23     <list_base> ::= <identifier>
+129    57     <field_suffix> ::= epsilon
+130    55     <field_ref> ::= <identifier> <field_suffix>
+131    62     <operator> ::= ">="
+132    57     <field_suffix> ::= epsilon
+133    55     <field_ref> ::= <identifier> <field_suffix>
+134    67     <value> ::= <field_ref>
+135    53     <simple_cond> ::= <field_ref> <operator> <value>
+136    57     <field_suffix> ::= epsilon
+137    55     <field_ref> ::= <identifier> <field_suffix>
+138    63     <operator> ::= "<="
+139    57     <field_suffix> ::= epsilon
+140    55     <field_ref> ::= <identifier> <field_suffix>
+141    67     <value> ::= <field_ref>
+142    53     <simple_cond> ::= <field_ref> <operator> <value>
+143    52     <and_rest> ::= epsilon
+144    51     <and_rest> ::= "Cheese_Rattatino" <simple_cond> <and_rest>
+145    50     <and_cond> ::= <simple_cond> <and_rest>
+146    49     <or_rest> ::= epsilon
+147    47     <condition> ::= <and_cond> <or_rest>
+148    40     <filter_op> ::= "Gojo_Satoru" <condition>
+149    26     <list_op> ::= <filter_op>
+150    25     <list_ops> ::= epsilon
+151    24     <list_ops> ::= <list_op> <list_ops>
+152    21     <list_expression> ::= <list_base> <list_ops>
+153    16     <assignment> ::= <identifier> "=" <list_expression>
+154    4      <statement> ::= <assignment>
+155    23     <list_base> ::= <identifier>
+156    25     <list_ops> ::= epsilon
+157    21     <list_expression> ::= <list_base> <list_ops>
+158    19     <print_arg> ::= <list_expression>
+159    18     <print_statement> ::= "Bombardiro_Crocodilo" <print_arg>
+160    8      <statement> ::= <print_statement>
+161    23     <list_base> ::= <identifier>
+162    57     <field_suffix> ::= epsilon
+163    55     <field_ref> ::= <identifier> <field_suffix>
+164    58     <operator> ::= "=="
+165    64     <value> ::= <string>
+166    53     <simple_cond> ::= <field_ref> <operator> <value>
+167    52     <and_rest> ::= epsilon
+168    50     <and_cond> ::= <simple_cond> <and_rest>
+169    57     <field_suffix> ::= epsilon
+170    55     <field_ref> ::= <identifier> <field_suffix>
+171    58     <operator> ::= "=="
+172    64     <value> ::= <string>
+173    53     <simple_cond> ::= <field_ref> <operator> <value>
+174    52     <and_rest> ::= epsilon
+175    50     <and_cond> ::= <simple_cond> <and_rest>
+176    49     <or_rest> ::= epsilon
+177    48     <or_rest> ::= "Shpioniro_Golubiro" <and_cond> <or_rest>
+178    47     <condition> ::= <and_cond> <or_rest>
+179    54     <simple_cond> ::= "(" <condition> ")"
+180    57     <field_suffix> ::= epsilon
+181    55     <field_ref> ::= <identifier> <field_suffix>
+182    60     <operator> ::= ">"
+183    57     <field_suffix> ::= epsilon
+184    55     <field_ref> ::= <identifier> <field_suffix>
+185    67     <value> ::= <field_ref>
+186    53     <simple_cond> ::= <field_ref> <operator> <value>
+187    52     <and_rest> ::= epsilon
+188    51     <and_rest> ::= "Cheese_Rattatino" <simple_cond> <and_rest>
+189    50     <and_cond> ::= <simple_cond> <and_rest>
+190    49     <or_rest> ::= epsilon
+191    47     <condition> ::= <and_cond> <or_rest>
+192    40     <filter_op> ::= "Gojo_Satoru" <condition>
+193    26     <list_op> ::= <filter_op>
+194    25     <list_ops> ::= epsilon
+195    24     <list_ops> ::= <list_op> <list_ops>
+196    21     <list_expression> ::= <list_base> <list_ops>
+197    16     <assignment> ::= <identifier> "=" <list_expression>
+198    4      <statement> ::= <assignment>
+199    23     <list_base> ::= <identifier>
+200    57     <field_suffix> ::= epsilon
+201    55     <field_ref> ::= <identifier> <field_suffix>
+202    60     <operator> ::= ">"
+203    65     <value> ::= <number>
+204    53     <simple_cond> ::= <field_ref> <operator> <value>
+205    52     <and_rest> ::= epsilon
+206    50     <and_cond> ::= <simple_cond> <and_rest>
+207    49     <or_rest> ::= epsilon
+208    47     <condition> ::= <and_cond> <or_rest>
+209    40     <filter_op> ::= "Gojo_Satoru" <condition>
+210    26     <list_op> ::= <filter_op>
+211    46     <more_identifiers> ::= epsilon
+212    45     <more_identifiers> ::= "," <identifier> <more_identifiers>
+213    44     <identifier_list> ::= <identifier> <more_identifiers>
+214    43     <select_op> ::= "->" "(" <identifier_list> ")"
+215    29     <list_op> ::= <select_op>
+216    25     <list_ops> ::= epsilon
+217    24     <list_ops> ::= <list_op> <list_ops>
+218    24     <list_ops> ::= <list_op> <list_ops>
+219    21     <list_expression> ::= <list_base> <list_ops>
+220    16     <assignment> ::= <identifier> "=" <list_expression>
+221    4      <statement> ::= <assignment>
+222    23     <list_base> ::= <identifier>
+223    25     <list_ops> ::= epsilon
+224    21     <list_expression> ::= <list_base> <list_ops>
+225    19     <print_arg> ::= <list_expression>
+226    18     <print_statement> ::= "Bombardiro_Crocodilo" <print_arg>
+227    8      <statement> ::= <print_statement>
+228    17     <input_statement> ::= "Tung_Tung_Tung_Sahur" <identifier>
+229    5      <statement> ::= <input_statement>
+230    23     <list_base> ::= <identifier>
+231    57     <field_suffix> ::= epsilon
+232    55     <field_ref> ::= <identifier> <field_suffix>
+233    60     <operator> ::= ">"
+234    57     <field_suffix> ::= epsilon
+235    55     <field_ref> ::= <identifier> <field_suffix>
+236    67     <value> ::= <field_ref>
+237    53     <simple_cond> ::= <field_ref> <operator> <value>
+238    52     <and_rest> ::= epsilon
+239    50     <and_cond> ::= <simple_cond> <and_rest>
+240    49     <or_rest> ::= epsilon
+241    47     <condition> ::= <and_cond> <or_rest>
+242    40     <filter_op> ::= "Gojo_Satoru" <condition>
+243    26     <list_op> ::= <filter_op>
+244    25     <list_ops> ::= epsilon
+245    24     <list_ops> ::= <list_op> <list_ops>
+246    21     <list_expression> ::= <list_base> <list_ops>
+247    16     <assignment> ::= <identifier> "=" <list_expression>
+248    4      <statement> ::= <assignment>
+249    23     <list_base> ::= <identifier>
+250    42     <remove_op> ::= "-" <identifier>
+251    28     <list_op> ::= <remove_op>
+252    25     <list_ops> ::= epsilon
+253    24     <list_ops> ::= <list_op> <list_ops>
+254    21     <list_expression> ::= <list_base> <list_ops>
+255    16     <assignment> ::= <identifier> "=" <list_expression>
+256    4      <statement> ::= <assignment>
+257    23     <list_base> ::= <identifier>
+258    42     <remove_op> ::= "-" <identifier>
+259    28     <list_op> ::= <remove_op>
+260    25     <list_ops> ::= epsilon
+261    24     <list_ops> ::= <list_op> <list_ops>
+262    21     <list_expression> ::= <list_base> <list_ops>
+263    16     <assignment> ::= <identifier> "=" <list_expression>
+264    4      <statement> ::= <assignment>
+265    23     <list_base> ::= <identifier>
+266    25     <list_ops> ::= epsilon
+267    21     <list_expression> ::= <list_base> <list_ops>
+268    19     <print_arg> ::= <list_expression>
+269    18     <print_statement> ::= "Bombardiro_Crocodilo" <print_arg>
+270    8      <statement> ::= <print_statement>
+271    23     <list_base> ::= <identifier>
+272    57     <field_suffix> ::= epsilon
+273    55     <field_ref> ::= <identifier> <field_suffix>
+274    61     <operator> ::= "<"
+275    57     <field_suffix> ::= epsilon
+276    55     <field_ref> ::= <identifier> <field_suffix>
+277    67     <value> ::= <field_ref>
+278    53     <simple_cond> ::= <field_ref> <operator> <value>
+279    52     <and_rest> ::= epsilon
+280    50     <and_cond> ::= <simple_cond> <and_rest>
+281    49     <or_rest> ::= epsilon
+282    47     <condition> ::= <and_cond> <or_rest>
+283    40     <filter_op> ::= "Gojo_Satoru" <condition>
+284    26     <list_op> ::= <filter_op>
+285    25     <list_ops> ::= epsilon
+286    24     <list_ops> ::= <list_op> <list_ops>
+287    21     <list_expression> ::= <list_base> <list_ops>
+288    16     <assignment> ::= <identifier> "=" <list_expression>
+289    4      <statement> ::= <assignment>
+290    23     <list_base> ::= <identifier>
+291    25     <list_ops> ::= epsilon
+292    21     <list_expression> ::= <list_base> <list_ops>
+293    19     <print_arg> ::= <list_expression>
+294    18     <print_statement> ::= "Bombardiro_Crocodilo" <print_arg>
+295    8      <statement> ::= <print_statement>
+296    23     <list_base> ::= <identifier>
+297    25     <list_ops> ::= epsilon
+298    21     <list_expression> ::= <list_base> <list_ops>
+299    57     <field_suffix> ::= epsilon
+300    55     <field_ref> ::= <identifier> <field_suffix>
+301    58     <operator> ::= "=="
+302    57     <field_suffix> ::= epsilon
+303    55     <field_ref> ::= <identifier> <field_suffix>
+304    67     <value> ::= <field_ref>
+305    53     <simple_cond> ::= <field_ref> <operator> <value>
+306    52     <and_rest> ::= epsilon
+307    50     <and_cond> ::= <simple_cond> <and_rest>
+308    49     <or_rest> ::= epsilon
+309    47     <condition> ::= <and_cond> <or_rest>
+310    23     <list_base> ::= <identifier>
+311    25     <list_ops> ::= epsilon
+312    21     <list_expression> ::= <list_base> <list_ops>
+313    19     <print_arg> ::= <list_expression>
+314    18     <print_statement> ::= "Bombardiro_Crocodilo" <print_arg>
+315    8      <statement> ::= <print_statement>
+316    3      <statements> ::= epsilon
+317    72     <statement_block> ::= <statement> <statements>
+318    70     <optional_else> ::= epsilon
+319    68     <if_statement> ::= "Tralalero_Tralala" <condition> <statement_block> <optional_else> "Hipocactus"
+320    6      <statement> ::= <if_statement>
+321    57     <field_suffix> ::= epsilon
+322    55     <field_ref> ::= <identifier> <field_suffix>
+323    62     <operator> ::= ">="
+324    57     <field_suffix> ::= epsilon
+325    55     <field_ref> ::= <identifier> <field_suffix>
+326    67     <value> ::= <field_ref>
+327    53     <simple_cond> ::= <field_ref> <operator> <value>
+328    52     <and_rest> ::= epsilon
+329    50     <and_cond> ::= <simple_cond> <and_rest>
+330    57     <field_suffix> ::= epsilon
+331    55     <field_ref> ::= <identifier> <field_suffix>
+332    58     <operator> ::= "=="
+333    64     <value> ::= <string>
+334    53     <simple_cond> ::= <field_ref> <operator> <value>
+335    52     <and_rest> ::= epsilon
+336    50     <and_cond> ::= <simple_cond> <and_rest>
+337    49     <or_rest> ::= epsilon
+338    48     <or_rest> ::= "Shpioniro_Golubiro" <and_cond> <or_rest>
+339    47     <condition> ::= <and_cond> <or_rest>
+340    23     <list_base> ::= <identifier>
+341    25     <list_ops> ::= epsilon
+342    21     <list_expression> ::= <list_base> <list_ops>
+343    19     <print_arg> ::= <list_expression>
+344    18     <print_statement> ::= "Bombardiro_Crocodilo" <print_arg>
+345    8      <statement> ::= <print_statement>
+346    3      <statements> ::= epsilon
+347    72     <statement_block> ::= <statement> <statements>
+348    57     <field_suffix> ::= epsilon
+349    55     <field_ref> ::= <identifier> <field_suffix>
+350    61     <operator> ::= "<"
+351    65     <value> ::= <number>
+352    53     <simple_cond> ::= <field_ref> <operator> <value>
+353    57     <field_suffix> ::= epsilon
+354    55     <field_ref> ::= <identifier> <field_suffix>
+355    59     <operator> ::= "!="
+356    64     <value> ::= <string>
+357    53     <simple_cond> ::= <field_ref> <operator> <value>
+358    52     <and_rest> ::= epsilon
+359    51     <and_rest> ::= "Cheese_Rattatino" <simple_cond> <and_rest>
+360    50     <and_cond> ::= <simple_cond> <and_rest>
+361    49     <or_rest> ::= epsilon
+362    47     <condition> ::= <and_cond> <or_rest>
+363    54     <simple_cond> ::= "(" <condition> ")"
+364    52     <and_rest> ::= epsilon
+365    50     <and_cond> ::= <simple_cond> <and_rest>
+366    57     <field_suffix> ::= epsilon
+367    55     <field_ref> ::= <identifier> <field_suffix>
+368    58     <operator> ::= "=="
+369    64     <value> ::= <string>
+370    53     <simple_cond> ::= <field_ref> <operator> <value>
+371    52     <and_rest> ::= epsilon
+372    50     <and_cond> ::= <simple_cond> <and_rest>
+373    49     <or_rest> ::= epsilon
+374    48     <or_rest> ::= "Shpioniro_Golubiro" <and_cond> <or_rest>
+375    47     <condition> ::= <and_cond> <or_rest>
+376    23     <list_base> ::= <identifier>
+377    25     <list_ops> ::= epsilon
+378    21     <list_expression> ::= <list_base> <list_ops>
+379    19     <print_arg> ::= <list_expression>
+380    18     <print_statement> ::= "Bombardiro_Crocodilo" <print_arg>
+381    8      <statement> ::= <print_statement>
+382    3      <statements> ::= epsilon
+383    72     <statement_block> ::= <statement> <statements>
+384    70     <optional_else> ::= epsilon
+385    68     <if_statement> ::= "Tralalero_Tralala" <condition> <statement_block> <optional_else> "Hipocactus"
+386    6      <statement> ::= <if_statement>
+387    3      <statements> ::= epsilon
+388    72     <statement_block> ::= <statement> <statements>
+389    69     <optional_else> ::= "Cappuccino_Assassino" <statement_block>
+390    68     <if_statement> ::= "Tralalero_Tralala" <condition> <statement_block> <optional_else> "Hipocactus"
+391    6      <statement> ::= <if_statement>
+392    3      <statements> ::= epsilon
+393    2      <statements> ::= <statement> <statements>
+394    72     <statement_block> ::= <statement> <statements>
+395    71     <for_loop> ::= "Bombombini_Gusini" <identifier> "Trippi_Troppi" <list_expression> <statement_block> "Hipocactus"
+396    7      <statement> ::= <for_loop>
+397    23     <list_base> ::= <identifier>
+398    25     <list_ops> ::= epsilon
+399    21     <list_expression> ::= <list_base> <list_ops>
+400    19     <print_arg> ::= <list_expression>
+401    18     <print_statement> ::= "Bombardiro_Crocodilo" <print_arg>
+402    8      <statement> ::= <print_statement>
+403    3      <statements> ::= epsilon
+404    2      <statements> ::= <statement> <statements>
+405    2      <statements> ::= <statement> <statements>
+406    2      <statements> ::= <statement> <statements>
+407    2      <statements> ::= <statement> <statements>
+408    2      <statements> ::= <statement> <statements>
+409    2      <statements> ::= <statement> <statements>
+410    2      <statements> ::= <statement> <statements>
+411    2      <statements> ::= <statement> <statements>
+412    2      <statements> ::= <statement> <statements>
+413    2      <statements> ::= <statement> <statements>
+414    2      <statements> ::= <statement> <statements>
+415    2      <statements> ::= <statement> <statements>
+416    2      <statements> ::= <statement> <statements>
+417    2      <statements> ::= <statement> <statements>
+418    2      <statements> ::= <statement> <statements>
+419    2      <statements> ::= <statement> <statements>
+420    2      <statements> ::= <statement> <statements>
+421    2      <statements> ::= <statement> <statements>
+422    2      <statements> ::= <statement> <statements>
+423    2      <statements> ::= <statement> <statements>
+424    1      <program> ::= <const_decls> <statement> <statements>

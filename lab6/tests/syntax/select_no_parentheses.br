@@ -1,0 +1,3 @@
+// the fields of a select must be written between parentheses
+squad = Peigengoo([{name: "Gojo", power: 100}])
+names = squad -> name

@@ -1,0 +1,2 @@
+// a pair is identifier ":" value (the colon is missing after power)
+squad = Peigengoo([{name: "Gojo", power 100}])

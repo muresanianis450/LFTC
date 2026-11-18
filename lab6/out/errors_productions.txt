@@ -1,0 +1,1 @@
+No string of productions: the input was rejected (see the error files).

@@ -1,0 +1,5 @@
+CODE   TOKEN                    ST_POS
+11     Tung_Tung_Tung_Sahur     -
+0      x                        0
+10     Bombardiro_Crocodilo     -
+0      x                        0

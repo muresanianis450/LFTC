@@ -1,0 +1,1 @@
+Syntax error at line 3, column 28: unexpected }, expecting identifier or number or string or SIXSEVEN (found '}')

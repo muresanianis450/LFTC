@@ -1,0 +1,20 @@
+STRING OF PRODUCTIONS (12 productions)
+rightmost derivation of <program>, first production applied first:
+
+1 2 3 8 18 19 21 25 23 5 17 10
+
+
+REDUCTIONS made by the parser, in order:
+STEP   PROD   PRODUCTION
+1      10     <const_decls> ::= epsilon
+2      17     <input_statement> ::= "Tung_Tung_Tung_Sahur" <identifier>
+3      5      <statement> ::= <input_statement>
+4      23     <list_base> ::= <identifier>
+5      25     <list_ops> ::= epsilon
+6      21     <list_expression> ::= <list_base> <list_ops>
+7      19     <print_arg> ::= <list_expression>
+8      18     <print_statement> ::= "Bombardiro_Crocodilo" <print_arg>
+9      8      <statement> ::= <print_statement>
+10     3      <statements> ::= epsilon
+11     2      <statements> ::= <statement> <statements>
+12     1      <program> ::= <const_decls> <statement> <statements>

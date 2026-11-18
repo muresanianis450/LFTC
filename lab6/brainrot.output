@@ -1,0 +1,1425 @@
+Grammar
+
+    0 $accept: program "end of file"
+
+    1 program: const_decls statement statements
+
+    2 statements: statement statements
+    3           | %empty
+
+    4 statement: assignment
+    5          | input_statement
+    6          | if_statement
+    7          | for_loop
+    8          | print_statement
+
+    9 const_decls: const_decl const_decls
+   10            | %empty
+
+   11 const_decl: "Chimpanzini_Bananini" "identifier" "=" const_value
+
+   12 const_value: "string"
+   13            | "number"
+   14            | "SIXSEVEN"
+   15            | "identifier"
+
+   16 assignment: "identifier" "=" list_expression
+
+   17 input_statement: "Tung_Tung_Tung_Sahur" "identifier"
+
+   18 print_statement: "Bombardiro_Crocodilo" print_arg
+
+   19 print_arg: list_expression
+   20          | "string"
+
+   21 list_expression: list_base list_ops
+
+   22 list_base: list_creation
+   23          | "identifier"
+
+   24 list_ops: list_op list_ops
+   25         | %empty
+
+   26 list_op: filter_op
+   27        | add_op
+   28        | remove_op
+   29        | select_op
+
+   30 list_creation: "Peigengoo" "(" record_list ")"
+
+   31 record_list: "[" record_list_content "]"
+
+   32 record_list_content: record more_records
+   33                    | %empty
+
+   34 more_records: "," record more_records
+   35             | %empty
+
+   36 record: "{" pair more_pairs "}"
+
+   37 more_pairs: "," pair more_pairs
+   38           | %empty
+
+   39 pair: "identifier" ":" value
+
+   40 filter_op: "Gojo_Satoru" condition
+
+   41 add_op: "+" "identifier" "=" value
+
+   42 remove_op: "-" "identifier"
+
+   43 select_op: "->" "(" identifier_list ")"
+
+   44 identifier_list: "identifier" more_identifiers
+
+   45 more_identifiers: "," "identifier" more_identifiers
+   46                 | %empty
+
+   47 condition: and_cond or_rest
+
+   48 or_rest: "Shpioniro_Golubiro" and_cond or_rest
+   49        | %empty
+
+   50 and_cond: simple_cond and_rest
+
+   51 and_rest: "Cheese_Rattatino" simple_cond and_rest
+   52         | %empty
+
+   53 simple_cond: field_ref operator value
+   54            | "(" condition ")"
+
+   55 field_ref: "identifier" field_suffix
+
+   56 field_suffix: "." "identifier"
+   57             | %empty
+
+   58 operator: "=="
+   59         | "!="
+   60         | ">"
+   61         | "<"
+   62         | ">="
+   63         | "<="
+
+   64 value: "string"
+   65      | "number"
+   66      | "SIXSEVEN"
+   67      | field_ref
+
+   68 if_statement: "Tralalero_Tralala" condition statement_block optional_else "Hipocactus"
+
+   69 optional_else: "Cappuccino_Assassino" statement_block
+   70              | %empty
+
+   71 for_loop: "Bombombini_Gusini" "identifier" "Trippi_Troppi" list_expression statement_block "Hipocactus"
+
+   72 statement_block: statement statements
+
+
+Terminals, with rules where they appear
+
+    "end of file" (0) 0
+    error (256)
+    "identifier" (258) 11 15 16 17 23 39 41 42 44 45 55 56 71
+    "number" (259) 13 65
+    "string" (260) 12 20 64
+    "Peigengoo" (261) 30
+    "Gojo_Satoru" (262) 40
+    "SIXSEVEN" (263) 14 66
+    "Tralalero_Tralala" (264) 68
+    "Cappuccino_Assassino" (265) 69
+    "Hipocactus" (266) 68 71
+    "Bombombini_Gusini" (267) 71
+    "Trippi_Troppi" (268) 71
+    "Bombardiro_Crocodilo" (269) 18
+    "Tung_Tung_Tung_Sahur" (270) 17
+    "Cheese_Rattatino" (271) 51
+    "Shpioniro_Golubiro" (272) 48
+    "Chimpanzini_Bananini" (273) 11
+    "==" (274) 58
+    "!=" (275) 59
+    ">" (276) 60
+    "<" (277) 61
+    ">=" (278) 62
+    "<=" (279) 63
+    "=" (280) 11 16 41
+    "+" (281) 41
+    "-" (282) 42
+    "->" (283) 43
+    "(" (284) 30 43 54
+    ")" (285) 30 43 54
+    "[" (286) 31
+    "]" (287) 31
+    "{" (288) 36
+    "}" (289) 36
+    "," (290) 34 37 45
+    ":" (291) 39
+    "." (292) 56
+
+
+Nonterminals, with rules where they appear
+
+    $accept (38)
+        on left: 0
+    program (39)
+        on left: 1
+        on right: 0
+    statements (40)
+        on left: 2 3
+        on right: 1 2 72
+    statement (41)
+        on left: 4 5 6 7 8
+        on right: 1 2 72
+    const_decls (42)
+        on left: 9 10
+        on right: 1 9
+    const_decl (43)
+        on left: 11
+        on right: 9
+    const_value (44)
+        on left: 12 13 14 15
+        on right: 11
+    assignment (45)
+        on left: 16
+        on right: 4
+    input_statement (46)
+        on left: 17
+        on right: 5
+    print_statement (47)
+        on left: 18
+        on right: 8
+    print_arg (48)
+        on left: 19 20
+        on right: 18
+    list_expression (49)
+        on left: 21
+        on right: 16 19 71
+    list_base (50)
+        on left: 22 23
+        on right: 21
+    list_ops (51)
+        on left: 24 25
+        on right: 21 24
+    list_op (52)
+        on left: 26 27 28 29
+        on right: 24
+    list_creation (53)
+        on left: 30
+        on right: 22
+    record_list (54)
+        on left: 31
+        on right: 30
+    record_list_content (55)
+        on left: 32 33
+        on right: 31
+    more_records (56)
+        on left: 34 35
+        on right: 32 34
+    record (57)
+        on left: 36
+        on right: 32 34
+    more_pairs (58)
+        on left: 37 38
+        on right: 36 37
+    pair (59)
+        on left: 39
+        on right: 36 37
+    filter_op (60)
+        on left: 40
+        on right: 26
+    add_op (61)
+        on left: 41
+        on right: 27
+    remove_op (62)
+        on left: 42
+        on right: 28
+    select_op (63)
+        on left: 43
+        on right: 29
+    identifier_list (64)
+        on left: 44
+        on right: 43
+    more_identifiers (65)
+        on left: 45 46
+        on right: 44 45
+    condition (66)
+        on left: 47
+        on right: 40 54 68
+    or_rest (67)
+        on left: 48 49
+        on right: 47 48
+    and_cond (68)
+        on left: 50
+        on right: 47 48
+    and_rest (69)
+        on left: 51 52
+        on right: 50 51
+    simple_cond (70)
+        on left: 53 54
+        on right: 50 51
+    field_ref (71)
+        on left: 55
+        on right: 53 67
+    field_suffix (72)
+        on left: 56 57
+        on right: 55
+    operator (73)
+        on left: 58 59 60 61 62 63
+        on right: 53
+    value (74)
+        on left: 64 65 66 67
+        on right: 39 41 53
+    if_statement (75)
+        on left: 68
+        on right: 6
+    optional_else (76)
+        on left: 69 70
+        on right: 68
+    for_loop (77)
+        on left: 71
+        on right: 7
+    statement_block (78)
+        on left: 72
+        on right: 68 69 71
+
+
+State 0
+
+    0 $accept: . program "end of file"
+
+    "Chimpanzini_Bananini"  shift, and go to state 1
+
+    $default  reduce using rule 10 (const_decls)
+
+    program      go to state 2
+    const_decls  go to state 3
+    const_decl   go to state 4
+
+
+State 1
+
+   11 const_decl: "Chimpanzini_Bananini" . "identifier" "=" const_value
+
+    "identifier"  shift, and go to state 5
+
+
+State 2
+
+    0 $accept: program . "end of file"
+
+    "end of file"  shift, and go to state 6
+
+
+State 3
+
+    1 program: const_decls . statement statements
+
+    "identifier"            shift, and go to state 7
+    "Tralalero_Tralala"     shift, and go to state 8
+    "Bombombini_Gusini"     shift, and go to state 9
+    "Bombardiro_Crocodilo"  shift, and go to state 10
+    "Tung_Tung_Tung_Sahur"  shift, and go to state 11
+
+    statement        go to state 12
+    assignment       go to state 13
+    input_statement  go to state 14
+    print_statement  go to state 15
+    if_statement     go to state 16
+    for_loop         go to state 17
+
+
+State 4
+
+    9 const_decls: const_decl . const_decls
+
+    "Chimpanzini_Bananini"  shift, and go to state 1
+
+    $default  reduce using rule 10 (const_decls)
+
+    const_decls  go to state 18
+    const_decl   go to state 4
+
+
+State 5
+
+   11 const_decl: "Chimpanzini_Bananini" "identifier" . "=" const_value
+
+    "="  shift, and go to state 19
+
+
+State 6
+
+    0 $accept: program "end of file" .
+
+    $default  accept
+
+
+State 7
+
+   16 assignment: "identifier" . "=" list_expression
+
+    "="  shift, and go to state 20
+
+
+State 8
+
+   68 if_statement: "Tralalero_Tralala" . condition statement_block optional_else "Hipocactus"
+
+    "identifier"  shift, and go to state 21
+    "("           shift, and go to state 22
+
+    condition    go to state 23
+    and_cond     go to state 24
+    simple_cond  go to state 25
+    field_ref    go to state 26
+
+
+State 9
+
+   71 for_loop: "Bombombini_Gusini" . "identifier" "Trippi_Troppi" list_expression statement_block "Hipocactus"
+
+    "identifier"  shift, and go to state 27
+
+
+State 10
+
+   18 print_statement: "Bombardiro_Crocodilo" . print_arg
+
+    "identifier"  shift, and go to state 28
+    "string"      shift, and go to state 29
+    "Peigengoo"   shift, and go to state 30
+
+    print_arg        go to state 31
+    list_expression  go to state 32
+    list_base        go to state 33
+    list_creation    go to state 34
+
+
+State 11
+
+   17 input_statement: "Tung_Tung_Tung_Sahur" . "identifier"
+
+    "identifier"  shift, and go to state 35
+
+
+State 12
+
+    1 program: const_decls statement . statements
+
+    "identifier"            shift, and go to state 7
+    "Tralalero_Tralala"     shift, and go to state 8
+    "Bombombini_Gusini"     shift, and go to state 9
+    "Bombardiro_Crocodilo"  shift, and go to state 10
+    "Tung_Tung_Tung_Sahur"  shift, and go to state 11
+
+    $default  reduce using rule 3 (statements)
+
+    statements       go to state 36
+    statement        go to state 37
+    assignment       go to state 13
+    input_statement  go to state 14
+    print_statement  go to state 15
+    if_statement     go to state 16
+    for_loop         go to state 17
+
+
+State 13
+
+    4 statement: assignment .
+
+    $default  reduce using rule 4 (statement)
+
+
+State 14
+
+    5 statement: input_statement .
+
+    $default  reduce using rule 5 (statement)
+
+
+State 15
+
+    8 statement: print_statement .
+
+    $default  reduce using rule 8 (statement)
+
+
+State 16
+
+    6 statement: if_statement .
+
+    $default  reduce using rule 6 (statement)
+
+
+State 17
+
+    7 statement: for_loop .
+
+    $default  reduce using rule 7 (statement)
+
+
+State 18
+
+    9 const_decls: const_decl const_decls .
+
+    $default  reduce using rule 9 (const_decls)
+
+
+State 19
+
+   11 const_decl: "Chimpanzini_Bananini" "identifier" "=" . const_value
+
+    "identifier"  shift, and go to state 38
+    "number"      shift, and go to state 39
+    "string"      shift, and go to state 40
+    "SIXSEVEN"    shift, and go to state 41
+
+    const_value  go to state 42
+
+
+State 20
+
+   16 assignment: "identifier" "=" . list_expression
+
+    "identifier"  shift, and go to state 28
+    "Peigengoo"   shift, and go to state 30
+
+    list_expression  go to state 43
+    list_base        go to state 33
+    list_creation    go to state 34
+
+
+State 21
+
+   55 field_ref: "identifier" . field_suffix
+
+    "."  shift, and go to state 44
+
+    $default  reduce using rule 57 (field_suffix)
+
+    field_suffix  go to state 45
+
+
+State 22
+
+   54 simple_cond: "(" . condition ")"
+
+    "identifier"  shift, and go to state 21
+    "("           shift, and go to state 22
+
+    condition    go to state 46
+    and_cond     go to state 24
+    simple_cond  go to state 25
+    field_ref    go to state 26
+
+
+State 23
+
+   68 if_statement: "Tralalero_Tralala" condition . statement_block optional_else "Hipocactus"
+
+    "identifier"            shift, and go to state 7
+    "Tralalero_Tralala"     shift, and go to state 8
+    "Bombombini_Gusini"     shift, and go to state 9
+    "Bombardiro_Crocodilo"  shift, and go to state 10
+    "Tung_Tung_Tung_Sahur"  shift, and go to state 11
+
+    statement        go to state 47
+    assignment       go to state 13
+    input_statement  go to state 14
+    print_statement  go to state 15
+    if_statement     go to state 16
+    for_loop         go to state 17
+    statement_block  go to state 48
+
+
+State 24
+
+   47 condition: and_cond . or_rest
+
+    "Shpioniro_Golubiro"  shift, and go to state 49
+
+    $default  reduce using rule 49 (or_rest)
+
+    or_rest  go to state 50
+
+
+State 25
+
+   50 and_cond: simple_cond . and_rest
+
+    "Cheese_Rattatino"  shift, and go to state 51
+
+    $default  reduce using rule 52 (and_rest)
+
+    and_rest  go to state 52
+
+
+State 26
+
+   53 simple_cond: field_ref . operator value
+
+    "=="  shift, and go to state 53
+    "!="  shift, and go to state 54
+    ">"   shift, and go to state 55
+    "<"   shift, and go to state 56
+    ">="  shift, and go to state 57
+    "<="  shift, and go to state 58
+
+    operator  go to state 59
+
+
+State 27
+
+   71 for_loop: "Bombombini_Gusini" "identifier" . "Trippi_Troppi" list_expression statement_block "Hipocactus"
+
+    "Trippi_Troppi"  shift, and go to state 60
+
+
+State 28
+
+   23 list_base: "identifier" .
+
+    $default  reduce using rule 23 (list_base)
+
+
+State 29
+
+   20 print_arg: "string" .
+
+    $default  reduce using rule 20 (print_arg)
+
+
+State 30
+
+   30 list_creation: "Peigengoo" . "(" record_list ")"
+
+    "("  shift, and go to state 61
+
+
+State 31
+
+   18 print_statement: "Bombardiro_Crocodilo" print_arg .
+
+    $default  reduce using rule 18 (print_statement)
+
+
+State 32
+
+   19 print_arg: list_expression .
+
+    $default  reduce using rule 19 (print_arg)
+
+
+State 33
+
+   21 list_expression: list_base . list_ops
+
+    "Gojo_Satoru"  shift, and go to state 62
+    "+"            shift, and go to state 63
+    "-"            shift, and go to state 64
+    "->"           shift, and go to state 65
+
+    $default  reduce using rule 25 (list_ops)
+
+    list_ops   go to state 66
+    list_op    go to state 67
+    filter_op  go to state 68
+    add_op     go to state 69
+    remove_op  go to state 70
+    select_op  go to state 71
+
+
+State 34
+
+   22 list_base: list_creation .
+
+    $default  reduce using rule 22 (list_base)
+
+
+State 35
+
+   17 input_statement: "Tung_Tung_Tung_Sahur" "identifier" .
+
+    $default  reduce using rule 17 (input_statement)
+
+
+State 36
+
+    1 program: const_decls statement statements .
+
+    $default  reduce using rule 1 (program)
+
+
+State 37
+
+    2 statements: statement . statements
+
+    "identifier"            shift, and go to state 7
+    "Tralalero_Tralala"     shift, and go to state 8
+    "Bombombini_Gusini"     shift, and go to state 9
+    "Bombardiro_Crocodilo"  shift, and go to state 10
+    "Tung_Tung_Tung_Sahur"  shift, and go to state 11
+
+    $default  reduce using rule 3 (statements)
+
+    statements       go to state 72
+    statement        go to state 37
+    assignment       go to state 13
+    input_statement  go to state 14
+    print_statement  go to state 15
+    if_statement     go to state 16
+    for_loop         go to state 17
+
+
+State 38
+
+   15 const_value: "identifier" .
+
+    $default  reduce using rule 15 (const_value)
+
+
+State 39
+
+   13 const_value: "number" .
+
+    $default  reduce using rule 13 (const_value)
+
+
+State 40
+
+   12 const_value: "string" .
+
+    $default  reduce using rule 12 (const_value)
+
+
+State 41
+
+   14 const_value: "SIXSEVEN" .
+
+    $default  reduce using rule 14 (const_value)
+
+
+State 42
+
+   11 const_decl: "Chimpanzini_Bananini" "identifier" "=" const_value .
+
+    $default  reduce using rule 11 (const_decl)
+
+
+State 43
+
+   16 assignment: "identifier" "=" list_expression .
+
+    $default  reduce using rule 16 (assignment)
+
+
+State 44
+
+   56 field_suffix: "." . "identifier"
+
+    "identifier"  shift, and go to state 73
+
+
+State 45
+
+   55 field_ref: "identifier" field_suffix .
+
+    $default  reduce using rule 55 (field_ref)
+
+
+State 46
+
+   54 simple_cond: "(" condition . ")"
+
+    ")"  shift, and go to state 74
+
+
+State 47
+
+   72 statement_block: statement . statements
+
+    "identifier"            shift, and go to state 7
+    "Tralalero_Tralala"     shift, and go to state 8
+    "Bombombini_Gusini"     shift, and go to state 9
+    "Bombardiro_Crocodilo"  shift, and go to state 10
+    "Tung_Tung_Tung_Sahur"  shift, and go to state 11
+
+    $default  reduce using rule 3 (statements)
+
+    statements       go to state 75
+    statement        go to state 37
+    assignment       go to state 13
+    input_statement  go to state 14
+    print_statement  go to state 15
+    if_statement     go to state 16
+    for_loop         go to state 17
+
+
+State 48
+
+   68 if_statement: "Tralalero_Tralala" condition statement_block . optional_else "Hipocactus"
+
+    "Cappuccino_Assassino"  shift, and go to state 76
+
+    $default  reduce using rule 70 (optional_else)
+
+    optional_else  go to state 77
+
+
+State 49
+
+   48 or_rest: "Shpioniro_Golubiro" . and_cond or_rest
+
+    "identifier"  shift, and go to state 21
+    "("           shift, and go to state 22
+
+    and_cond     go to state 78
+    simple_cond  go to state 25
+    field_ref    go to state 26
+
+
+State 50
+
+   47 condition: and_cond or_rest .
+
+    $default  reduce using rule 47 (condition)
+
+
+State 51
+
+   51 and_rest: "Cheese_Rattatino" . simple_cond and_rest
+
+    "identifier"  shift, and go to state 21
+    "("           shift, and go to state 22
+
+    simple_cond  go to state 79
+    field_ref    go to state 26
+
+
+State 52
+
+   50 and_cond: simple_cond and_rest .
+
+    $default  reduce using rule 50 (and_cond)
+
+
+State 53
+
+   58 operator: "==" .
+
+    $default  reduce using rule 58 (operator)
+
+
+State 54
+
+   59 operator: "!=" .
+
+    $default  reduce using rule 59 (operator)
+
+
+State 55
+
+   60 operator: ">" .
+
+    $default  reduce using rule 60 (operator)
+
+
+State 56
+
+   61 operator: "<" .
+
+    $default  reduce using rule 61 (operator)
+
+
+State 57
+
+   62 operator: ">=" .
+
+    $default  reduce using rule 62 (operator)
+
+
+State 58
+
+   63 operator: "<=" .
+
+    $default  reduce using rule 63 (operator)
+
+
+State 59
+
+   53 simple_cond: field_ref operator . value
+
+    "identifier"  shift, and go to state 21
+    "number"      shift, and go to state 80
+    "string"      shift, and go to state 81
+    "SIXSEVEN"    shift, and go to state 82
+
+    field_ref  go to state 83
+    value      go to state 84
+
+
+State 60
+
+   71 for_loop: "Bombombini_Gusini" "identifier" "Trippi_Troppi" . list_expression statement_block "Hipocactus"
+
+    "identifier"  shift, and go to state 28
+    "Peigengoo"   shift, and go to state 30
+
+    list_expression  go to state 85
+    list_base        go to state 33
+    list_creation    go to state 34
+
+
+State 61
+
+   30 list_creation: "Peigengoo" "(" . record_list ")"
+
+    "["  shift, and go to state 86
+
+    record_list  go to state 87
+
+
+State 62
+
+   40 filter_op: "Gojo_Satoru" . condition
+
+    "identifier"  shift, and go to state 21
+    "("           shift, and go to state 22
+
+    condition    go to state 88
+    and_cond     go to state 24
+    simple_cond  go to state 25
+    field_ref    go to state 26
+
+
+State 63
+
+   41 add_op: "+" . "identifier" "=" value
+
+    "identifier"  shift, and go to state 89
+
+
+State 64
+
+   42 remove_op: "-" . "identifier"
+
+    "identifier"  shift, and go to state 90
+
+
+State 65
+
+   43 select_op: "->" . "(" identifier_list ")"
+
+    "("  shift, and go to state 91
+
+
+State 66
+
+   21 list_expression: list_base list_ops .
+
+    $default  reduce using rule 21 (list_expression)
+
+
+State 67
+
+   24 list_ops: list_op . list_ops
+
+    "Gojo_Satoru"  shift, and go to state 62
+    "+"            shift, and go to state 63
+    "-"            shift, and go to state 64
+    "->"           shift, and go to state 65
+
+    $default  reduce using rule 25 (list_ops)
+
+    list_ops   go to state 92
+    list_op    go to state 67
+    filter_op  go to state 68
+    add_op     go to state 69
+    remove_op  go to state 70
+    select_op  go to state 71
+
+
+State 68
+
+   26 list_op: filter_op .
+
+    $default  reduce using rule 26 (list_op)
+
+
+State 69
+
+   27 list_op: add_op .
+
+    $default  reduce using rule 27 (list_op)
+
+
+State 70
+
+   28 list_op: remove_op .
+
+    $default  reduce using rule 28 (list_op)
+
+
+State 71
+
+   29 list_op: select_op .
+
+    $default  reduce using rule 29 (list_op)
+
+
+State 72
+
+    2 statements: statement statements .
+
+    $default  reduce using rule 2 (statements)
+
+
+State 73
+
+   56 field_suffix: "." "identifier" .
+
+    $default  reduce using rule 56 (field_suffix)
+
+
+State 74
+
+   54 simple_cond: "(" condition ")" .
+
+    $default  reduce using rule 54 (simple_cond)
+
+
+State 75
+
+   72 statement_block: statement statements .
+
+    $default  reduce using rule 72 (statement_block)
+
+
+State 76
+
+   69 optional_else: "Cappuccino_Assassino" . statement_block
+
+    "identifier"            shift, and go to state 7
+    "Tralalero_Tralala"     shift, and go to state 8
+    "Bombombini_Gusini"     shift, and go to state 9
+    "Bombardiro_Crocodilo"  shift, and go to state 10
+    "Tung_Tung_Tung_Sahur"  shift, and go to state 11
+
+    statement        go to state 47
+    assignment       go to state 13
+    input_statement  go to state 14
+    print_statement  go to state 15
+    if_statement     go to state 16
+    for_loop         go to state 17
+    statement_block  go to state 93
+
+
+State 77
+
+   68 if_statement: "Tralalero_Tralala" condition statement_block optional_else . "Hipocactus"
+
+    "Hipocactus"  shift, and go to state 94
+
+
+State 78
+
+   48 or_rest: "Shpioniro_Golubiro" and_cond . or_rest
+
+    "Shpioniro_Golubiro"  shift, and go to state 49
+
+    $default  reduce using rule 49 (or_rest)
+
+    or_rest  go to state 95
+
+
+State 79
+
+   51 and_rest: "Cheese_Rattatino" simple_cond . and_rest
+
+    "Cheese_Rattatino"  shift, and go to state 51
+
+    $default  reduce using rule 52 (and_rest)
+
+    and_rest  go to state 96
+
+
+State 80
+
+   65 value: "number" .
+
+    $default  reduce using rule 65 (value)
+
+
+State 81
+
+   64 value: "string" .
+
+    $default  reduce using rule 64 (value)
+
+
+State 82
+
+   66 value: "SIXSEVEN" .
+
+    $default  reduce using rule 66 (value)
+
+
+State 83
+
+   67 value: field_ref .
+
+    $default  reduce using rule 67 (value)
+
+
+State 84
+
+   53 simple_cond: field_ref operator value .
+
+    $default  reduce using rule 53 (simple_cond)
+
+
+State 85
+
+   71 for_loop: "Bombombini_Gusini" "identifier" "Trippi_Troppi" list_expression . statement_block "Hipocactus"
+
+    "identifier"            shift, and go to state 7
+    "Tralalero_Tralala"     shift, and go to state 8
+    "Bombombini_Gusini"     shift, and go to state 9
+    "Bombardiro_Crocodilo"  shift, and go to state 10
+    "Tung_Tung_Tung_Sahur"  shift, and go to state 11
+
+    statement        go to state 47
+    assignment       go to state 13
+    input_statement  go to state 14
+    print_statement  go to state 15
+    if_statement     go to state 16
+    for_loop         go to state 17
+    statement_block  go to state 97
+
+
+State 86
+
+   31 record_list: "[" . record_list_content "]"
+
+    "{"  shift, and go to state 98
+
+    $default  reduce using rule 33 (record_list_content)
+
+    record_list_content  go to state 99
+    record               go to state 100
+
+
+State 87
+
+   30 list_creation: "Peigengoo" "(" record_list . ")"
+
+    ")"  shift, and go to state 101
+
+
+State 88
+
+   40 filter_op: "Gojo_Satoru" condition .
+
+    $default  reduce using rule 40 (filter_op)
+
+
+State 89
+
+   41 add_op: "+" "identifier" . "=" value
+
+    "="  shift, and go to state 102
+
+
+State 90
+
+   42 remove_op: "-" "identifier" .
+
+    $default  reduce using rule 42 (remove_op)
+
+
+State 91
+
+   43 select_op: "->" "(" . identifier_list ")"
+
+    "identifier"  shift, and go to state 103
+
+    identifier_list  go to state 104
+
+
+State 92
+
+   24 list_ops: list_op list_ops .
+
+    $default  reduce using rule 24 (list_ops)
+
+
+State 93
+
+   69 optional_else: "Cappuccino_Assassino" statement_block .
+
+    $default  reduce using rule 69 (optional_else)
+
+
+State 94
+
+   68 if_statement: "Tralalero_Tralala" condition statement_block optional_else "Hipocactus" .
+
+    $default  reduce using rule 68 (if_statement)
+
+
+State 95
+
+   48 or_rest: "Shpioniro_Golubiro" and_cond or_rest .
+
+    $default  reduce using rule 48 (or_rest)
+
+
+State 96
+
+   51 and_rest: "Cheese_Rattatino" simple_cond and_rest .
+
+    $default  reduce using rule 51 (and_rest)
+
+
+State 97
+
+   71 for_loop: "Bombombini_Gusini" "identifier" "Trippi_Troppi" list_expression statement_block . "Hipocactus"
+
+    "Hipocactus"  shift, and go to state 105
+
+
+State 98
+
+   36 record: "{" . pair more_pairs "}"
+
+    "identifier"  shift, and go to state 106
+
+    pair  go to state 107
+
+
+State 99
+
+   31 record_list: "[" record_list_content . "]"
+
+    "]"  shift, and go to state 108
+
+
+State 100
+
+   32 record_list_content: record . more_records
+
+    ","  shift, and go to state 109
+
+    $default  reduce using rule 35 (more_records)
+
+    more_records  go to state 110
+
+
+State 101
+
+   30 list_creation: "Peigengoo" "(" record_list ")" .
+
+    $default  reduce using rule 30 (list_creation)
+
+
+State 102
+
+   41 add_op: "+" "identifier" "=" . value
+
+    "identifier"  shift, and go to state 21
+    "number"      shift, and go to state 80
+    "string"      shift, and go to state 81
+    "SIXSEVEN"    shift, and go to state 82
+
+    field_ref  go to state 83
+    value      go to state 111
+
+
+State 103
+
+   44 identifier_list: "identifier" . more_identifiers
+
+    ","  shift, and go to state 112
+
+    $default  reduce using rule 46 (more_identifiers)
+
+    more_identifiers  go to state 113
+
+
+State 104
+
+   43 select_op: "->" "(" identifier_list . ")"
+
+    ")"  shift, and go to state 114
+
+
+State 105
+
+   71 for_loop: "Bombombini_Gusini" "identifier" "Trippi_Troppi" list_expression statement_block "Hipocactus" .
+
+    $default  reduce using rule 71 (for_loop)
+
+
+State 106
+
+   39 pair: "identifier" . ":" value
+
+    ":"  shift, and go to state 115
+
+
+State 107
+
+   36 record: "{" pair . more_pairs "}"
+
+    ","  shift, and go to state 116
+
+    $default  reduce using rule 38 (more_pairs)
+
+    more_pairs  go to state 117
+
+
+State 108
+
+   31 record_list: "[" record_list_content "]" .
+
+    $default  reduce using rule 31 (record_list)
+
+
+State 109
+
+   34 more_records: "," . record more_records
+
+    "{"  shift, and go to state 98
+
+    record  go to state 118
+
+
+State 110
+
+   32 record_list_content: record more_records .
+
+    $default  reduce using rule 32 (record_list_content)
+
+
+State 111
+
+   41 add_op: "+" "identifier" "=" value .
+
+    $default  reduce using rule 41 (add_op)
+
+
+State 112
+
+   45 more_identifiers: "," . "identifier" more_identifiers
+
+    "identifier"  shift, and go to state 119
+
+
+State 113
+
+   44 identifier_list: "identifier" more_identifiers .
+
+    $default  reduce using rule 44 (identifier_list)
+
+
+State 114
+
+   43 select_op: "->" "(" identifier_list ")" .
+
+    $default  reduce using rule 43 (select_op)
+
+
+State 115
+
+   39 pair: "identifier" ":" . value
+
+    "identifier"  shift, and go to state 21
+    "number"      shift, and go to state 80
+    "string"      shift, and go to state 81
+    "SIXSEVEN"    shift, and go to state 82
+
+    field_ref  go to state 83
+    value      go to state 120
+
+
+State 116
+
+   37 more_pairs: "," . pair more_pairs
+
+    "identifier"  shift, and go to state 106
+
+    pair  go to state 121
+
+
+State 117
+
+   36 record: "{" pair more_pairs . "}"
+
+    "}"  shift, and go to state 122
+
+
+State 118
+
+   34 more_records: "," record . more_records
+
+    ","  shift, and go to state 109
+
+    $default  reduce using rule 35 (more_records)
+
+    more_records  go to state 123
+
+
+State 119
+
+   45 more_identifiers: "," "identifier" . more_identifiers
+
+    ","  shift, and go to state 112
+
+    $default  reduce using rule 46 (more_identifiers)
+
+    more_identifiers  go to state 124
+
+
+State 120
+
+   39 pair: "identifier" ":" value .
+
+    $default  reduce using rule 39 (pair)
+
+
+State 121
+
+   37 more_pairs: "," pair . more_pairs
+
+    ","  shift, and go to state 116
+
+    $default  reduce using rule 38 (more_pairs)
+
+    more_pairs  go to state 125
+
+
+State 122
+
+   36 record: "{" pair more_pairs "}" .
+
+    $default  reduce using rule 36 (record)
+
+
+State 123
+
+   34 more_records: "," record more_records .
+
+    $default  reduce using rule 34 (more_records)
+
+
+State 124
+
+   45 more_identifiers: "," "identifier" more_identifiers .
+
+    $default  reduce using rule 45 (more_identifiers)
+
+
+State 125
+
+   37 more_pairs: "," pair more_pairs .
+
+    $default  reduce using rule 37 (more_pairs)

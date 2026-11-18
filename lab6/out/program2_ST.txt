@@ -1,0 +1,46 @@
+SYMBOL TABLE (hash table, 101 buckets, separate chaining)
+entries: 42 | buckets used: 35 | longest chain: 3 | load factor: 0.416
+
+ST_POS    BUCKET   KIND             LEXEME
+0         7        identifier       START_RANK
+1         20       string constant  "rookie"
+2         82       identifier       PENALTY
+3         0        int constant     -5
+4         23       identifier       LEGEND
+5         96       identifier       STAR_POWER
+6         1        int constant     90
+7         70       identifier       ELITE_POWER
+8         51       identifier       WILDCARD_FLOOR
+9         50       int constant     50
+10        93       identifier       roster
+11        8        identifier       name
+12        59       string constant  "Gojo"
+13        55       identifier       power
+14        77       int constant     100
+15        100      identifier       team
+16        60       string constant  "Jujutsu"
+17        33       string constant  "Sahur"
+18        79       string constant  "Brainrot"
+19        80       string constant  "Trippi"
+20        11       int constant     20
+21        27       string constant  "Bombardiro"
+22        42       int constant     85
+23        23       string constant  "Air"
+24        38       string constant  "Cappuccino"
+25        3        int constant     55
+26        74       string constant  "Cafe"
+27        55       identifier       bench
+28        82       identifier       minpower
+29        37       identifier       maxpower
+30        73       identifier       rank
+31        93       identifier       bonus
+32        35       int constant     0
+33        98       identifier       penalty
+34        73       identifier       eligible
+35        55       identifier       wildcards
+36        93       identifier       cards
+37        63       int constant     60
+38        86       identifier       threshold
+39        91       identifier       champions
+40        92       identifier       f
+41        24       int constant     30

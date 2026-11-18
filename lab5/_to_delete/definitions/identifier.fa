@@ -1,0 +1,7 @@
+# identifier: a letter or _ followed by letters, digits or _
+name: identifier
+states: q0 q1
+start: q0
+final: q1
+q0 [A-Za-z_] q1
+q1 [A-Za-z0-9_] q1
